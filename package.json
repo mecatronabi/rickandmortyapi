@@ -1,0 +1,12 @@
+{
+  "name": "retorickandmorty",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+"server":"browser-sync start --server --files 'css/*.css','js/*.js',*.html"
+  },
+  "author": "Nabila Padilla",
+  "license": "MIT"
+}
