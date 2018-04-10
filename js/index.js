@@ -1,6 +1,5 @@
 let response= document.getElementById('Elemento');
 
-
 function getData(){
 
 
@@ -15,6 +14,8 @@ function getData(){
   .then ((resp)=>resp.json())
   .then(function(data){
     console.log(data);
+  
+ let episodio = data.episode;
 
    
     let characterInfo = 
@@ -22,9 +23,10 @@ function getData(){
          <div class="presentacion">
 
              <div class="element1"> <h1>${data.name}</h1> </div>
-            <div class="element1"> <h3>Species</h3> ${data.species} </div>
-             <div class="element1"> <h3>Gender</h3> ${data.gender} </div>
-             <div class="element1"> <a href="${data.episode}">Episodio</a> </div>
+            <div class="element1"> <h3>Especie</h3> ${data.species} </div>
+             <div class="element1"> <h3>Género</h3> ${data.gender} </div>
+             <div class="element1"> <h3>Número de Personaje</h3> ${data.id} </div>
+         
 
         </div>
 
@@ -34,18 +36,28 @@ function getData(){
 
             <div class="element2">
 
-                    <div class="org"> <h3>Origin</h3> ${data.origin.name}</div>
-                    <div class="org"> <h3> Location</h3> ${data.location.name}</div>
+                    <div class="org"> <h3>Origen</h3> ${data.origin.name}</div>
+                    <div class="org"> <h3>Ubicación</h3> ${data.location.name}</div>
             
             </div>
-
+        </div>
+        
+        <div class="boton">
+        <a class="conoce" href="javascript:location.reload()">Conoce otro personaje</a>
         </div>
    
         `
-    response.innerHTML = characterInfo;
+        setTimeout(function () { 
+            location.reload(true); 
+          }, 300000);
+          
  
+    response.innerHTML = characterInfo;
 
-  })
+   
+
+  
+})
  
 }
 getData();
